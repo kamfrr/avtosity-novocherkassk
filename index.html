@@ -229,12 +229,8 @@
   .plist .note { grid-column: 1; font-size: var(--v-t-sm); color: var(--v-ink-soft); max-width: 36ch; }
   .plist .price { grid-column: 2; grid-row: 1 / span 2; align-self: start; font-weight: 600; font-size: var(--v-t-base); color: var(--v-accent); white-space: nowrap; }
   .prices:not(.is-open) .is-extra { display: none; }
-  .plist--wide { grid-column: 1 / -1; }
-  .plist--wide ul { display: grid; grid-template-columns: 1fr 1fr; column-gap: var(--v-7); }
-  .plist--wide li:nth-last-child(2) { border-bottom: 1px solid var(--v-hair); }
   .prices__more { justify-self: start; align-self: flex-start; }
   .prices:not(.is-open) .plist li:nth-child(3) { border-bottom: 1px solid var(--v-hair); }
-  @media (max-width: 1100px) { .plist--wide ul { grid-template-columns: 1fr; } .plist--wide li:nth-last-child(2) { border-bottom: 0; } }
   .prices__incl { font-size: var(--v-t-sm); color: var(--v-ink-soft); max-width: 62ch; }
   .prices__incl b { color: var(--v-ink); font-weight: 600; }
   .prices__aside { position: sticky; top: clamp(5rem, 12vh, 7rem); }
@@ -485,23 +481,8 @@
                 <li class="is-extra"><span class="name">Замена топливного фильтра</span><span class="note">Бензин и дизель</span><span class="price v-nums">400 ₽</span></li>
               </ul>
             </div>
-            <div class="plist plist--wide is-extra" id="ceny-smeta">
-              <h3 class="v-label">Ремонт – по смете после осмотра</h3>
-              <ul>
-                <li><span class="name">Компьютерная диагностика</span><span class="note">Ошибки, датчики, эндоскопия двигателя</span><span class="price">по записи</span></li>
-                <li><span class="name">Ремонт двигателя и ГБЦ</span><span class="note">Регулировка клапанов, система охлаждения</span><span class="price">по смете</span></li>
-                <li><span class="name">Ремонт АКПП</span><span class="note">Ремонт коробки и её деталей, сцепление</span><span class="price">по смете</span></li>
-                <li><span class="name">Ходовая и подвеска</span><span class="note">Диагностика, шаровые, рулевые наконечники</span><span class="price">по смете</span></li>
-                <li><span class="name">Тормозная система</span><span class="note">Колодки, диски, суппорты</span><span class="price">по смете</span></li>
-                <li><span class="name">Топливная система</span><span class="note">Форсунки, промывка инжектора, карбюратор</span><span class="price">по смете</span></li>
-                <li><span class="name">Автоэлектрика</span><span class="note">Электрика и электроника</span><span class="price">по смете</span></li>
-                <li><span class="name">ГУР, выхлоп, сварка</span><span class="note">Гидроусилитель, выхлопная система, слесарные работы</span><span class="price">по смете</span></li>
-                <li><span class="name">После ДТП</span><span class="note">Восстановление автомобиля</span><span class="price">по смете</span></li>
-                <li><span class="name">Шиномонтаж</span><span class="note">С балансировкой и ремонтом прокола</span><span class="price">по записи</span></li>
-              </ul>
-            </div>
           </div>
-          <button class="v-btn v-btn--ghost prices__more" type="button" aria-expanded="false" aria-controls="ceny-smeta">Показать все цены</button>
+          <button class="v-btn v-btn--ghost prices__more" type="button" aria-expanded="false" aria-controls="ceny">Показать все цены</button>
           <p class="prices__incl"><b>Диагностика, ремонт двигателя, АКПП и подвески – по смете после осмотра.</b> Смету озвучиваем до начала работ, итоговая цена с ней совпадает. Для юрлиц – договор на обслуживание.</p>
         </div>
         <aside class="prices__aside" data-v-in data-v-in-self>
