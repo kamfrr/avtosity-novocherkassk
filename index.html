@@ -228,6 +228,13 @@
   .plist .name { font-family: var(--v-font-display); font-weight: 600; font-size: var(--v-t-lg); letter-spacing: var(--v-track-normal); line-height: 1.15; }
   .plist .note { grid-column: 1; font-size: var(--v-t-sm); color: var(--v-ink-soft); max-width: 36ch; }
   .plist .price { grid-column: 2; grid-row: 1 / span 2; align-self: start; font-weight: 600; font-size: var(--v-t-base); color: var(--v-accent); white-space: nowrap; }
+  .prices:not(.is-open) .is-extra { display: none; }
+  .plist--wide { grid-column: 1 / -1; }
+  .plist--wide ul { display: grid; grid-template-columns: 1fr 1fr; column-gap: var(--v-7); }
+  .plist--wide li:nth-last-child(2) { border-bottom: 1px solid var(--v-hair); }
+  .prices__more { justify-self: start; align-self: flex-start; }
+  .prices:not(.is-open) .plist li:nth-child(3) { border-bottom: 1px solid var(--v-hair); }
+  @media (max-width: 1100px) { .plist--wide ul { grid-template-columns: 1fr; } .plist--wide li:nth-last-child(2) { border-bottom: 0; } }
   .prices__incl { font-size: var(--v-t-sm); color: var(--v-ink-soft); max-width: 62ch; }
   .prices__incl b { color: var(--v-ink); font-weight: 600; }
   .prices__aside { position: sticky; top: clamp(5rem, 12vh, 7rem); }
@@ -464,8 +471,8 @@
                 <li><span class="name">Замена масла в двигателе</span><span class="note">Рекомендуем каждые 7–8 тыс. км</span><span class="price v-nums">500 ₽</span></li>
                 <li><span class="name">Замена масла в КПП</span><span class="note">АКПП, МКПП, вариатор, робот – каждые 60–80 тыс. км</span><span class="price v-nums">2000 ₽</span></li>
                 <li><span class="name">Замена антифриза</span><span class="note">Раз в 3 года или 90 тыс. км</span><span class="price v-nums">1800 ₽</span></li>
-                <li><span class="name">Замена тормозной жидкости</span><span class="note">Каждые 40–60 тыс. км</span><span class="price v-nums">2000 ₽</span></li>
-                <li><span class="name">Замена жидкости ГУР / ЭУР</span><span class="note">Каждые 30–80 тыс. км</span><span class="price v-nums">1600 ₽</span></li>
+                <li class="is-extra"><span class="name">Замена тормозной жидкости</span><span class="note">Каждые 40–60 тыс. км</span><span class="price v-nums">2000 ₽</span></li>
+                <li class="is-extra"><span class="name">Замена жидкости ГУР / ЭУР</span><span class="note">Каждые 30–80 тыс. км</span><span class="price v-nums">1600 ₽</span></li>
               </ul>
             </div>
             <div class="plist">
@@ -474,11 +481,27 @@
                 <li><span class="name">Замена ремня или цепи ГРМ</span><span class="note">Каждые 60–120 тыс. км</span><span class="price v-nums">3000 ₽</span></li>
                 <li><span class="name">Сход-развал</span><span class="note">Китайские, российские и европейские автомобили</span><span class="price v-nums">1500 ₽</span></li>
                 <li><span class="name">Замена навесного ремня</span><span class="note">В том числе ремня генератора</span><span class="price v-nums">600 ₽</span></li>
-                <li><span class="name">Замена свечей</span><span class="note">Зажигания или накала</span><span class="price v-nums">600 ₽</span></li>
-                <li><span class="name">Замена топливного фильтра</span><span class="note">Бензин и дизель</span><span class="price v-nums">400 ₽</span></li>
+                <li class="is-extra"><span class="name">Замена свечей</span><span class="note">Зажигания или накала</span><span class="price v-nums">600 ₽</span></li>
+                <li class="is-extra"><span class="name">Замена топливного фильтра</span><span class="note">Бензин и дизель</span><span class="price v-nums">400 ₽</span></li>
+              </ul>
+            </div>
+            <div class="plist plist--wide is-extra" id="ceny-smeta">
+              <h3 class="v-label">Ремонт – по смете после осмотра</h3>
+              <ul>
+                <li><span class="name">Компьютерная диагностика</span><span class="note">Ошибки, датчики, эндоскопия двигателя</span><span class="price">по записи</span></li>
+                <li><span class="name">Ремонт двигателя и ГБЦ</span><span class="note">Регулировка клапанов, система охлаждения</span><span class="price">по смете</span></li>
+                <li><span class="name">Ремонт АКПП</span><span class="note">Ремонт коробки и её деталей, сцепление</span><span class="price">по смете</span></li>
+                <li><span class="name">Ходовая и подвеска</span><span class="note">Диагностика, шаровые, рулевые наконечники</span><span class="price">по смете</span></li>
+                <li><span class="name">Тормозная система</span><span class="note">Колодки, диски, суппорты</span><span class="price">по смете</span></li>
+                <li><span class="name">Топливная система</span><span class="note">Форсунки, промывка инжектора, карбюратор</span><span class="price">по смете</span></li>
+                <li><span class="name">Автоэлектрика</span><span class="note">Электрика и электроника</span><span class="price">по смете</span></li>
+                <li><span class="name">ГУР, выхлоп, сварка</span><span class="note">Гидроусилитель, выхлопная система, слесарные работы</span><span class="price">по смете</span></li>
+                <li><span class="name">После ДТП</span><span class="note">Восстановление автомобиля</span><span class="price">по смете</span></li>
+                <li><span class="name">Шиномонтаж</span><span class="note">С балансировкой и ремонтом прокола</span><span class="price">по записи</span></li>
               </ul>
             </div>
           </div>
+          <button class="v-btn v-btn--ghost prices__more" type="button" aria-expanded="false" aria-controls="ceny-smeta">Показать все цены</button>
           <p class="prices__incl"><b>Диагностика, ремонт двигателя, АКПП и подвески – по смете после осмотра.</b> Смету озвучиваем до начала работ, итоговая цена с ней совпадает. Для юрлиц – договор на обслуживание.</p>
         </div>
         <aside class="prices__aside" data-v-in data-v-in-self>
@@ -572,6 +595,17 @@
     var bar = document.querySelector('.bar'), on = null;
     function tick() { var s = window.scrollY > 40; if (s !== on) { on = s; bar.classList.toggle('is-scrolled', s); } }
     window.addEventListener('scroll', tick, { passive: true }); tick();
+  })();
+
+  // Каталог цен: сначала по три строки в колонке, кнопка раскрывает все.
+  (function () {
+    var box = document.querySelector('.prices'), btn = box.querySelector('.prices__more');
+    btn.addEventListener('click', function () {
+      var open = box.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open);
+      btn.textContent = open ? 'Свернуть' : 'Показать все цены';
+      if (!open) document.getElementById('ceny').scrollIntoView({ behavior: 'smooth' });
+    });
   })();
 
   // Фирменный ход «просвет»: развёртка и узлы живут в CSS от --v-p; скрипту остаётся счётчик «узлов проверено».
